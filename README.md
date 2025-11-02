@@ -72,6 +72,7 @@ FROM movie
 GROUP BY year 
 ORDER BY year;
 
+---
 
 🧰 Tools Used
 🗄️ Database: MySQL
