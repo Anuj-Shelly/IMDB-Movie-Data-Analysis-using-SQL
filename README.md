@@ -42,6 +42,7 @@ ORDER BY average_rating DESC, votes DESC
 LIMIT 10;
 
 ### 2️⃣ **Most Popular Genres**
+```sql
 SELECT g.genre, AVG(r.average_rating) AS avg_rating 
 FROM genre g 
 JOIN ratings r ON g.movie_id = r.movie_id 
@@ -49,6 +50,7 @@ GROUP BY g.genre
 ORDER BY avg_rating DESC;
 
 ### 3️⃣ Top Directors by Average Movie Rating
+```sql
 SELECT d.name, AVG(r.average_rating) AS avg_director_rating 
 FROM director d 
 JOIN director_mapping dm ON d.id = dm.director_id 
@@ -59,12 +61,14 @@ ORDER BY avg_director_rating DESC
 LIMIT 10;
 
 ### 4️⃣ Revenue Analysis
+```sql
 SELECT title, worldwide_gross_income 
 FROM movie 
 WHERE worldwide_gross_income IS NOT NULL 
 ORDER BY worldwide_gross_income DESC;
 
 ### 5️⃣ Number of Movies Released Per Year
+```sql
 SELECT year, COUNT(*) AS movie_count 
 FROM movie 
 GROUP BY year 
